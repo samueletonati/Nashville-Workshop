@@ -1,3 +1,5 @@
+import Image from "next/image"; 
+
 export default function Home() {
   const defaultImage = "https://www-s3-live.kent.edu/s3fs-root/s3fs-public/styles/profile_photo_internal/public/Default-Profile-Image_3.jpg";
 
@@ -82,8 +84,18 @@ export default function Home() {
           in Mathematics and Statistics, part I
         </h1>
         <div className="text-lg text-gray-600 font-medium space-y-1">
-          <p>August 16 (arrival day) – 19, 2026</p>
+          <p>August 16 – 19, 2026</p>
           <p>Vanderbilt University, Nashville, Tennessee</p>
+        </div>
+        <div className="mt-8">
+          <Image
+            src="/images/vanderbilt.jpg"
+            alt="Vanderbilt University"
+            width={1200}
+            height={500}
+            className="w-full rounded-md object-cover max-h-80"
+            priority
+          />
         </div>
       </header>
 
@@ -108,7 +120,7 @@ export default function Home() {
           
           <div className="bg-blue-50 border-l-4 border-blue-600 p-5 mt-8 rounded-r-md">
             <p className="text-blue-900 font-medium">
-              <strong>Looking ahead:</strong> "Energy and Polarization Problems in Mathematics and Statistics, part II" will be jointly hosted by the University of Insubria and Vanderbilt University in 2027 in either Como or Varese, Italy.
+              <strong>Looking ahead:</strong> &ldquo;Energy and Polarization Problems in Mathematics and Statistics, part II&rdquo; will be jointly hosted by the University of Insubria and Vanderbilt University in 2027 in either Como or Varese, Italy.
             </p>
           </div>
         </div>
