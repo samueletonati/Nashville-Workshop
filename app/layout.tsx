@@ -34,7 +34,7 @@ export default function RootLayout({
 
         {/* Footer */}
         <footer className="border-t border-gray-200 bg-gray-50 py-8 text-center text-sm text-gray-500">
-          <p>© {new Date().getFullYear()} Vanderbilt University</p>
+          <p>© {new Date().getFullYear()} Università degli Studi dell&apos;Insubria</p>
         </footer>
       </body>
     </html>
