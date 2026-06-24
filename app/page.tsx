@@ -65,7 +65,7 @@ export default function Home() {
     { 
       name: "Robert Womersley", 
       affiliation: "University of New South Wales",
-      image: "https://web.maths.unsw.edu.au/~rsw/pe12ld.jpg"
+      image: "https://api.research.unsw.edu.au/sites/default/files/images/profile/rob_womersley.jpg"
     }
   ];
 
