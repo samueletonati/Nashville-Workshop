@@ -42,7 +42,7 @@ export default function RootLayout({
             {/* Sezione Organizzatori */}
             <div className="flex flex-col md:flex-row items-center gap-6 text-center md:text-left bg-white p-6 rounded-xl border border-gray-200 shadow-sm w-full">
               <p className="text-gray-700 leading-relaxed text-sm md:text-base flex-1">
-                Organized by the{" "}
+                Proudly organized by the{" "}
                 <a href="https://my.vanderbilt.edu/cca/" target="_blank" rel="noopener noreferrer" className="font-semibold text-blue-600 hover:text-blue-800 underline decoration-blue-200 underline-offset-2">
                   Center for Constructive Approximation
                 </a>{" "}
@@ -52,8 +52,8 @@ export default function RootLayout({
                 </a>.
               </p>
               
-              <div className="flex items-center gap-4 shrink-0">
-
+              <div className="flex flex-wrap justify-center items-center gap-3 shrink-0">
+                
                 {/* Vanderbilt Logo Container */}
                 <div className="h-14 w-28 bg-white border border-gray-100 rounded-md p-1.5 flex items-center justify-center shadow-sm relative overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
