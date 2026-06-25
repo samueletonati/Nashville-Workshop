@@ -1,5 +1,3 @@
-// L'importazione di next/image è stata rimossa per evitare il blocco del server
-
 // Moved data outside the component to prevent unnecessary re-renders
 const participants = [
   { 
@@ -71,7 +69,7 @@ const participants = [
 
 export default function Home() {
   return (
-    <div className="space-y-20">
+    <div className="space-y-16">
       
       {/* HEADER */}
       <header id="home" className="border-b border-gray-300 pb-10 text-center md:text-left pt-4">
@@ -91,7 +89,7 @@ export default function Home() {
           </p>
         </div>
         
-        {/* L'immagine è stata convertita in un tag img standard per aggirare il timeout di Vercel */}
+        {/* L'immagine principale */}
         <div className="mt-10 aspect-video relative rounded-xl overflow-hidden shadow-lg border border-gray-200 bg-gray-100">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -102,38 +100,38 @@ export default function Home() {
         </div>
       </header>
 
-      {/* ORGANIZERS BANNER */}
-      <section className="bg-slate-50 border border-slate-200 rounded-xl p-6 -mt-8 shadow-sm">
+      {/* ORGANIZERS BANNER - ORA MOLTO PIÙ VISIBILE */}
+      <section className="bg-blue-50 border-2 border-blue-200 rounded-xl p-6 shadow-md">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-gray-700 leading-relaxed text-center md:text-left text-sm md:text-base">
+          <p className="text-blue-900 leading-relaxed text-center md:text-left text-sm md:text-base">
             Proudly organized by the{" "}
-            <a href="https://my.vanderbilt.edu/cca/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 font-semibold underline decoration-blue-200 underline-offset-2">
+            <a href="https://my.vanderbilt.edu/cca/" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-blue-600 underline decoration-blue-300 underline-offset-2">
               Center for Constructive Approximation
             </a>{" "}
             (Vanderbilt University) and the{" "}
-            <a href="https://dieco.uninsubria.it/it/strutture/inside-lab" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 font-semibold underline decoration-blue-200 underline-offset-2">
+            <a href="https://dieco.uninsubria.it/it/strutture/inside-lab" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-blue-600 underline decoration-blue-300 underline-offset-2">
               InsIDE lab
             </a>.
           </p>
+          
           <div className="flex items-center gap-4 shrink-0">
-            {/* InsIDE Logo */}
-            <div className="h-14 w-auto bg-white border border-gray-200 rounded-md p-1 flex items-center justify-center shadow-sm">
+            {/* InsIDE Logo Container */}
+            <div className="h-16 w-32 bg-white border border-blue-100 rounded-md p-2 flex items-center justify-center shadow-sm relative overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 
                 src="/images/inside-logo.png" 
                 alt="InsIDE Lab Logo" 
-                className="h-full w-auto object-contain"
-                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                className="h-full w-full object-contain"
               />
             </div>
-            {/* DDE Logo */}
-            <div className="h-14 w-auto bg-white border border-gray-200 rounded-md p-1 flex items-center justify-center shadow-sm">
+            
+            {/* DDE Logo Container */}
+            <div className="h-16 w-32 bg-white border border-blue-100 rounded-md p-2 flex items-center justify-center shadow-sm relative overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 
                 src="/images/dde-logo.png" 
                 alt="DDE Logo" 
-                className="h-full w-auto object-contain"
-                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                className="h-full w-full object-contain"
               />
             </div>
           </div>
