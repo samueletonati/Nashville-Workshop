@@ -135,7 +135,7 @@ export default function Home() {
       {/* PARTICIPANTS */}
       <section id="participants" className="scroll-mt-24">
         <h2 className="text-2xl font-bold text-slate-800 border-b-2 border-blue-600 pb-2 mb-8 inline-block">
-          Partial Listing of Participants
+          Participants
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700">
           {participants.map((p, idx) => (
