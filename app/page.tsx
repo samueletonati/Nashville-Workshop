@@ -102,6 +102,45 @@ export default function Home() {
         </div>
       </header>
 
+      {/* ORGANIZERS BANNER */}
+      <section className="bg-slate-50 border border-slate-200 rounded-xl p-6 -mt-8 shadow-sm">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          <p className="text-gray-700 leading-relaxed text-center md:text-left text-sm md:text-base">
+            Proudly organized by the{" "}
+            <a href="https://my.vanderbilt.edu/cca/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 font-semibold underline decoration-blue-200 underline-offset-2">
+              Center for Constructive Approximation
+            </a>{" "}
+            (Vanderbilt University) and the{" "}
+            <a href="https://dieco.uninsubria.it/it/strutture/inside-lab" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 font-semibold underline decoration-blue-200 underline-offset-2">
+              InsIDE lab
+            </a>.
+          </p>
+          <div className="flex items-center gap-4 shrink-0">
+            {/* InsIDE Logo */}
+            <div className="h-14 w-auto bg-white border border-gray-200 rounded-md p-1 flex items-center justify-center shadow-sm">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img 
+                src="/images/inside-logo.png" 
+                alt="InsIDE Lab Logo" 
+                className="h-full w-auto object-contain"
+                /* Se l'immagine non viene trovata, mostra un testo alternativo pulito */
+                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+              />
+            </div>
+            {/* DDE Logo */}
+            <div className="h-14 w-auto bg-white border border-gray-200 rounded-md p-1 flex items-center justify-center shadow-sm">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img 
+                src="/images/dde-logo.png" 
+                alt="DDE Logo" 
+                className="h-full w-auto object-contain"
+                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* DESCRIPTION */}
       <section id="description" className="scroll-mt-24">
         <h2 className="text-2xl font-bold text-slate-800 border-b-2 border-blue-600 pb-2 mb-6 inline-block">
