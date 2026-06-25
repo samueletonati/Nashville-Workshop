@@ -17,7 +17,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // Added 'scroll-smooth' for elegant navigation
     <html lang="en" className="scroll-smooth">
       <body className={inter.className}>
         {/* Navigation Menu */}
@@ -25,6 +24,10 @@ export default function RootLayout({
           <div className="max-w-5xl mx-auto px-6 flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium">
             <a href="#home" className="hover:text-blue-300 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 rounded px-1 -ml-1">Home</a>
             <a href="#description" className="hover:text-blue-300 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 rounded px-1">Description</a>
+            
+            {/* ECCO IL LINK AL PROGRAMMA AGGIUNTO QUI SOTTO */}
+            <a href="#program" className="hover:text-blue-300 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 rounded px-1">Program</a>
+            
             <a href="#participants" className="hover:text-blue-300 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 rounded px-1">Participants</a>
             <a href="#venue" className="hover:text-blue-300 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 rounded px-1">Venue & Links</a>
           </div>
