@@ -1,4 +1,4 @@
-import Image from "next/image";
+// L'importazione di next/image è stata rimossa per evitare il blocco del server
 
 // Moved data outside the component to prevent unnecessary re-renders
 const participants = [
@@ -90,14 +90,14 @@ export default function Home() {
             <span aria-hidden="true">📍</span> Vanderbilt University, TN
           </p>
         </div>
-        <div className="mt-10 aspect-video relative rounded-xl overflow-hidden shadow-lg border border-gray-200">
-          <Image
+        
+        {/* L'immagine è stata convertita in un tag img standard per aggirare il timeout di Vercel */}
+        <div className="mt-10 aspect-video relative rounded-xl overflow-hidden shadow-lg border border-gray-200 bg-gray-100">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src="/images/vanderbilt.jpg"
             alt="Beautiful view of Vanderbilt University Campus"
-            fill
-            className="object-cover"
-            priority
-            sizes="(max-width: 1024px) 100vw, 1024px"
+            className="w-full h-full object-cover"
           />
         </div>
       </header>
@@ -123,7 +123,6 @@ export default function Home() {
                 src="/images/inside-logo.png" 
                 alt="InsIDE Lab Logo" 
                 className="h-full w-auto object-contain"
-                /* Se l'immagine non viene trovata, mostra un testo alternativo pulito */
                 onError={(e) => { e.currentTarget.style.display = 'none'; }}
               />
             </div>
