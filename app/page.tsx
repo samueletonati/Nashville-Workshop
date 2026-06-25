@@ -30,7 +30,7 @@ const participants = [
   { 
     name: "Liudmyla Kryvonos", 
     affiliation: "University of North Florida",
-    image: "/Users/sam/Desktop/workshop-landing_v2/public/images/liudmyla.jpg"
+    image: "/images/liudmyla.jpg"
   },
   { 
     name: "Ryan Matzke", 
