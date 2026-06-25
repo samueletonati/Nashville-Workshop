@@ -35,13 +35,13 @@ export default function RootLayout({
           {children}
         </main>
 
-        {/* Footer Con Organizzatori e Loghi */}
-        <footer className="border-t border-gray-200 bg-gray-50 pt-12 pb-8 mt-8">
-          <div className="max-w-5xl mx-auto px-6 flex flex-col items-center gap-8">
+        {/* Footer Integrato (Elegante e Minimale) */}
+        <footer className="border-t border-gray-200 bg-gray-50 pt-10 pb-8 mt-8">
+          <div className="max-w-5xl mx-auto px-6 flex flex-col gap-8">
             
-            {/* Sezione Organizzatori */}
-            <div className="flex flex-col md:flex-row items-center gap-6 text-center md:text-left bg-white p-6 rounded-xl border border-gray-200 shadow-sm w-full">
-              <p className="text-gray-700 leading-relaxed text-sm md:text-base flex-1">
+            {/* Sezione Organizzatori e Loghi */}
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+              <p className="text-gray-600 leading-relaxed text-sm">
                 Proudly organized by the{" "}
                 <a href="https://my.vanderbilt.edu/cca/" target="_blank" rel="noopener noreferrer" className="font-semibold text-blue-600 hover:text-blue-800 underline decoration-blue-200 underline-offset-2">
                   Center for Constructive Approximation
@@ -52,42 +52,38 @@ export default function RootLayout({
                 </a>.
               </p>
               
-              <div className="flex flex-wrap justify-center items-center gap-3 shrink-0">
-                
-                {/* Vanderbilt Logo Container */}
-                <div className="h-14 w-28 bg-white border border-gray-100 rounded-md p-1.5 flex items-center justify-center shadow-sm relative overflow-hidden">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img 
-                    src="/images/vanderbilt.png" 
-                    alt="Vanderbilt University Logo" 
-                    className="h-full w-full object-contain"
-                  />
-                </div>
+              <div className="flex flex-wrap justify-center items-center gap-6 shrink-0 opacity-80 hover:opacity-100 transition-opacity duration-300">
+                {/* Vanderbilt Logo */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img 
+                  src="/images/vanderbilt.png" 
+                  alt="Vanderbilt University Logo" 
+                  className="h-10 w-auto object-contain"
+                />
 
-                {/* InsIDE Logo Container */}
-                <div className="h-14 w-28 bg-white border border-gray-100 rounded-md p-1.5 flex items-center justify-center shadow-sm relative overflow-hidden">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img 
-                    src="/images/inside-logo.png" 
-                    alt="InsIDE Lab Logo" 
-                    className="h-full w-full object-contain"
-                  />
-                </div>
+                {/* InsIDE Logo */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img 
+                  src="/images/inside-logo.png" 
+                  alt="InsIDE Lab Logo" 
+                  className="h-10 w-auto object-contain"
+                />
                 
-                {/* DDE Logo Container */}
-                <div className="h-14 w-28 bg-white border border-gray-100 rounded-md p-1.5 flex items-center justify-center shadow-sm relative overflow-hidden">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img 
-                    src="/images/dde-logo.png" 
-                    alt="DDE Logo" 
-                    className="h-full w-full object-contain"
-                  />
-                </div>
+                {/* DDE Logo */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img 
+                  src="/images/dde-logo.png" 
+                  alt="DDE Logo" 
+                  className="h-10 w-auto object-contain"
+                />
               </div>
             </div>
 
+            {/* Linea separatrice */}
+            <div className="w-full border-t border-gray-200"></div>
+
             {/* Copyright */}
-            <div className="text-sm text-gray-500 w-full text-center">
+            <div className="text-sm text-gray-400 w-full text-center">
               <p>© {new Date().getFullYear()} Università degli Studi dell&apos;Insubria &amp; Vanderbilt University</p>
             </div>
           </div>
