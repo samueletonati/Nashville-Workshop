@@ -52,11 +52,11 @@ export default function RootLayout({
             
             <div className="flex items-center gap-5 opacity-80 hover:opacity-100 transition-opacity duration-300">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/vanderbilt.png" alt="Vanderbilt Logo" className="h-8 w-auto object-contain" />
+              <img src="/images/vanderbilt.png" alt="Vanderbilt Logo" className="h-10 w-auto object-contain" />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/inside-logo.png" alt="InsIDE Logo" className="h-8 w-auto object-contain" />
+              <img src="/images/inside-logo.png" alt="InsIDE Logo" className="h-10 w-auto object-contain" />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/dde-logo.png" alt="DDE Logo" className="h-8 w-auto object-contain" />
+              <img src="/images/dde-logo.png" alt="DDE Logo" className="h-10 w-auto object-contain" />
             </div>
 
           </div>
