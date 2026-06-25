@@ -42,7 +42,7 @@ export default function RootLayout({
             {/* Sezione Organizzatori e Loghi */}
             <div className="flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
               <p className="text-gray-600 leading-relaxed text-sm">
-                Proudly organized by the{" "}
+                Organized by the{" "}
                 <a href="https://my.vanderbilt.edu/cca/" target="_blank" rel="noopener noreferrer" className="font-semibold text-blue-600 hover:text-blue-800 underline decoration-blue-200 underline-offset-2">
                   Center for Constructive Approximation
                 </a>{" "}
