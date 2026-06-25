@@ -35,55 +35,36 @@ export default function RootLayout({
           {children}
         </main>
 
-        {/* Footer Integrato (Elegante e Minimale) */}
-        <footer className="border-t border-gray-200 bg-gray-50 pt-10 pb-8 mt-8">
-          <div className="max-w-5xl mx-auto px-6 flex flex-col gap-8">
+        {/* Footer Ultra-Compatto */}
+        <footer className="border-t border-gray-200 bg-gray-50 py-6">
+          <div className="max-w-5xl mx-auto px-6 flex flex-col gap-4">
             
-            {/* Sezione Organizzatori e Loghi */}
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
-              <p className="text-gray-600 leading-relaxed text-sm">
+            {/* Testo e Loghi sulla stessa linea (su schermi grandi) */}
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <p className="text-gray-600 text-sm text-center md:text-left">
                 Organized by the{" "}
                 <a href="https://my.vanderbilt.edu/cca/" target="_blank" rel="noopener noreferrer" className="font-semibold text-blue-600 hover:text-blue-800 underline decoration-blue-200 underline-offset-2">
                   Center for Constructive Approximation
                 </a>{" "}
-                (Vanderbilt University) and the{" "}
+                and the{" "}
                 <a href="https://dieco.uninsubria.it/it/strutture/inside-lab" target="_blank" rel="noopener noreferrer" className="font-semibold text-blue-600 hover:text-blue-800 underline decoration-blue-200 underline-offset-2">
                   InsIDE lab
                 </a>.
               </p>
               
-              <div className="flex flex-wrap justify-center items-center gap-6 shrink-0 opacity-80 hover:opacity-100 transition-opacity duration-300">
-                {/* Vanderbilt Logo */}
+              <div className="flex items-center gap-5 opacity-80 hover:opacity-100 transition-opacity duration-300">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img 
-                  src="/images/vanderbilt.png" 
-                  alt="Vanderbilt University Logo" 
-                  className="h-10 w-auto object-contain"
-                />
-
-                {/* InsIDE Logo */}
+                <img src="/images/vanderbilt.png" alt="Vanderbilt Logo" className="h-8 w-auto object-contain" />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img 
-                  src="/images/inside-logo.png" 
-                  alt="InsIDE Lab Logo" 
-                  className="h-10 w-auto object-contain"
-                />
-                
-                {/* DDE Logo */}
+                <img src="/images/inside-logo.png" alt="InsIDE Logo" className="h-8 w-auto object-contain" />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img 
-                  src="/images/dde-logo.png" 
-                  alt="DDE Logo" 
-                  className="h-10 w-auto object-contain"
-                />
+                <img src="/images/dde-logo.png" alt="DDE Logo" className="h-8 w-auto object-contain" />
               </div>
             </div>
 
-            {/* Linea separatrice */}
-            <div className="w-full border-t border-gray-200"></div>
+            <div className="w-full border-t border-gray-200/60"></div>
 
-            {/* Copyright */}
-            <div className="text-sm text-gray-400 w-full text-center">
+            <div className="text-xs text-gray-400 text-center">
               <p>© {new Date().getFullYear()} Università degli Studi dell&apos;Insubria &amp; Vanderbilt University</p>
             </div>
           </div>
