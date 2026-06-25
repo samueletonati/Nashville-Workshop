@@ -53,6 +53,17 @@ export default function RootLayout({
               </p>
               
               <div className="flex items-center gap-4 shrink-0">
+
+                {/* Vanderbilt Logo Container */}
+                <div className="h-14 w-28 bg-white border border-gray-100 rounded-md p-1.5 flex items-center justify-center shadow-sm relative overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img 
+                    src="/images/vanderbilt.png" 
+                    alt="Vanderbilt University Logo" 
+                    className="h-full w-full object-contain"
+                  />
+                </div>
+
                 {/* InsIDE Logo Container */}
                 <div className="h-14 w-28 bg-white border border-gray-100 rounded-md p-1.5 flex items-center justify-center shadow-sm relative overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
