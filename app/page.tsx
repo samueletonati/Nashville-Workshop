@@ -100,44 +100,6 @@ export default function Home() {
         </div>
       </header>
 
-      {/* ORGANIZERS BANNER - ORA MOLTO PIÙ VISIBILE */}
-      <section className="bg-blue-50 border-2 border-blue-200 rounded-xl p-6 shadow-md">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-blue-900 leading-relaxed text-center md:text-left text-sm md:text-base">
-            Proudly organized by the{" "}
-            <a href="https://my.vanderbilt.edu/cca/" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-blue-600 underline decoration-blue-300 underline-offset-2">
-              Center for Constructive Approximation
-            </a>{" "}
-            (Vanderbilt University) and the{" "}
-            <a href="https://dieco.uninsubria.it/it/strutture/inside-lab" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-blue-600 underline decoration-blue-300 underline-offset-2">
-              InsIDE lab
-            </a>.
-          </p>
-          
-          <div className="flex items-center gap-4 shrink-0">
-            {/* InsIDE Logo Container */}
-            <div className="h-16 w-32 bg-white border border-blue-100 rounded-md p-2 flex items-center justify-center shadow-sm relative overflow-hidden">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img 
-                src="/images/inside-logo.png" 
-                alt="InsIDE Lab Logo" 
-                className="h-full w-full object-contain"
-              />
-            </div>
-            
-            {/* DDE Logo Container */}
-            <div className="h-16 w-32 bg-white border border-blue-100 rounded-md p-2 flex items-center justify-center shadow-sm relative overflow-hidden">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img 
-                src="/images/dde-logo.png" 
-                alt="DDE Logo" 
-                className="h-full w-full object-contain"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* DESCRIPTION */}
       <section id="description" className="scroll-mt-24">
         <h2 className="text-2xl font-bold text-slate-800 border-b-2 border-blue-600 pb-2 mb-6 inline-block">
