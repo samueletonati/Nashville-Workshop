@@ -32,7 +32,7 @@ const participants = [
   },
   { 
     name: "Ryan Matzke", 
-    affiliation: "Case Western",
+    affiliation: "Case Western Reserve University",
     image: "https://artscimedia.case.edu/wp-content/uploads/2025/08/26093812/84d79e82-3e47-4151-bb65-3b156b82186e.jpg"
   },
   { 
