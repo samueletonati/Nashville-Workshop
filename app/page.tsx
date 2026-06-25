@@ -1,8 +1,6 @@
 import Image from "next/image";
 
 // Moved data outside the component to prevent unnecessary re-renders
-const defaultImage = "https://www-s3-live.kent.edu/s3fs-root/s3fs-public/styles/profile_photo_internal/public/Default-Profile-Image_3.jpg";
-
 const participants = [
   { 
     name: "Peter Boyvalenkov", 
@@ -10,7 +8,7 @@ const participants = [
     image: "https://i1.rgstatic.net/ii/profile.image/314279830458373-1451941558783_Q512/Peter-Boyvalenkov.jpg"
   },
   { 
-    name: "Jose Carrillo", 
+    name: "José A. Carrillo", 
     affiliation: "University of Oxford",
     image: "https://www.queens.ox.ac.uk/wp-content/uploads/2022/08/Jose-Carrillo-WK5A3594.jpg"
   },
@@ -22,17 +20,17 @@ const participants = [
   { 
     name: "Doug Hardin", 
     affiliation: "Vanderbilt University",
-    image: defaultImage
+    image: "https://as.vanderbilt.edu/photos/math/people/image.php/doug-hardin.jpg?width=220&image=/photos/math/people/doug-hardin.jpg"
   },
   { 
-    name: "Xinpeng Huang", 
-    affiliation: "Central South University",
-    image: defaultImage
+    name: "Yanghong Huang", 
+    affiliation: "The Manchester University",
+    image: "https://personalpages.manchester.ac.uk/staff/yanghong.huang/img/yhpic.jpg"
   },
   { 
     name: "Liudmyla Kryvonos", 
-    affiliation: "",
-    image: defaultImage
+    affiliation: "University of North Florida",
+    image: "/Users/sam/Desktop/workshop-landing_v2/public/images/liudmyla.jpg"
   },
   { 
     name: "Ryan Matzke", 
@@ -73,7 +71,7 @@ const participants = [
 
 export default function Home() {
   return (
-    <div className="space-y-20"> {/* Increased main spacing slightly for better breathing room */}
+    <div className="space-y-20">
       
       {/* HEADER */}
       <header id="home" className="border-b border-gray-300 pb-10 text-center md:text-left pt-4">
@@ -111,7 +109,7 @@ export default function Home() {
         </h2>
         <div className="text-gray-700 leading-relaxed space-y-5 text-lg">
           <p>
-            The workshop aims to bring together researchers studying two measures of equidistribution, energy and polarisation, that received comparatively less attention than measures of separation and covering.
+            The workshop will bring together researchers studying problems related to the equidistribution of point configurations, namely energy and polarization, which can be viewed as generalizations of the basic properties of separation and covering.
           </p>
           <p>
             Energy minimization problems, both discrete and continuous, arise naturally in many areas of mathematics and science: discrete geometry, mathematical physics, approximation theory, flocking behavior, statistical mechanics, coding theory, etc. Polarization problems (also known as Chebyshev constants) are related max-min problems for potentials.
@@ -132,10 +130,26 @@ export default function Home() {
         </div>
       </section>
 
+      {/* PROGRAM */}
+      <section id="program" className="scroll-mt-24">
+        <h2 className="text-2xl font-bold text-slate-800 border-b-2 border-blue-600 pb-2 mb-6 inline-block">
+          Program
+        </h2>
+        <div className="bg-slate-50 border border-slate-200 rounded-xl p-8 text-center shadow-sm">
+          <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span aria-hidden="true" className="text-2xl">🗓️</span>
+          </div>
+          <h3 className="text-xl font-bold text-slate-800 mb-2">Schedule of Talks</h3>
+          <p className="text-gray-600 max-w-lg mx-auto">
+            The detailed schedule of talks and events is currently being finalized. Please check back closer to the workshop dates for the full program.
+          </p>
+        </div>
+      </section>
+
       {/* PARTICIPANTS */}
       <section id="participants" className="scroll-mt-24">
         <h2 className="text-2xl font-bold text-slate-800 border-b-2 border-blue-600 pb-2 mb-8 inline-block">
-          Participants
+          Partial Listing of Participants
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700">
           {participants.map((p, idx) => (
