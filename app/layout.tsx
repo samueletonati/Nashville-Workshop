@@ -36,7 +36,7 @@ export default function RootLayout({
         </main>
 
         {/* Footer Ultra-Minimale a Riga Singola */}
-        <footer className="border-t border-gray-200 bg-gray-50 py-4">
+        <footer className="border-t border-gray-200 bg-gray-50 py-5">
           <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
             
             <p className="text-gray-600 text-sm text-center md:text-left">
