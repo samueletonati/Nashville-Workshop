@@ -31,7 +31,7 @@ const participants = [
     name: "Christina Giannitsi",
     affiliation: "Virginia Tech",
     website: "https://sites.google.com/view/christina-giannitsi/home",
-    image: "https://lh3.googleusercontent.com/sitesv/AG8ngQVDEkOwUHUmCBQUPfsx5CbvbE2-OoGU4TnY9AtcVdlaGeY_Wg9V8Osq8eZyYeSq4aW4MujGcZt3HuKvE-SCLyUJbbUZT-HnISdk6ADYdw-y0RI5BAuMh4Z7LJv_oDPJTkzqf198qYR4Lt9AdYoRIjKwkkm5xJMtP2wrE_A1fYV5N1kXKce9g7TcPvcMBwukScA4-aAaTZxaY6jyssJfUIVZtqzHUnh4zW6iyjRAPSI=w1280"
+    image: "/images/christina.jpg"
   },
   {
     name: "Doug Hardin",
@@ -63,7 +63,7 @@ const participants = [
     website: "https://people.cs.kuleuven.be/~dirk.nuyens/",
     // TODO: save the photo from https://people.cs.kuleuven.be/~dirk.nuyens/cv/
     // into public/images/nuyens.jpg — until then the initials avatar is shown.
-    image: "/images/nuyens.jpg"
+    image: "/images/dirk.jpg"
   },
   {
     name: "Ed Saff",
