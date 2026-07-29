@@ -99,9 +99,10 @@ const participants = [
     name: "Robert Womersley",
     affiliation: "University of New South Wales",
     website: "https://www.unsw.edu.au/staff/robert-womersley",
-    // The UNSW-hosted image cannot be hot-linked from other sites.
-    // Save a local copy as public/images/womersley.jpg.
-    image: "/images/womersley.jpg"
+    // This is the same URL UNSW's own profile page uses. If it stops loading,
+    // the initials fallback takes over; a self-hosted copy in public/images/
+    // would be the permanent fix.
+    image: "https://api.research.unsw.edu.au/sites/default/files/images/profile/rob_womersley.jpg"
   }
 ];
 
