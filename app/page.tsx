@@ -441,17 +441,6 @@ export default function Home() {
             </p>
           </div>
         )}
-
-        <p className="text-sm text-gray-500 mt-4">
-          Members of the press are welcome to contact the organizers at{" "}
-          <a
-            href="mailto:doug.hardin@vanderbilt.edu"
-            className="text-blue-600 hover:text-blue-800 font-semibold underline decoration-blue-200 underline-offset-2"
-          >
-            doug.hardin@vanderbilt.edu
-          </a>
-          .
-        </p>
       </section>
 
       {/* VENUE & LINKS */}
