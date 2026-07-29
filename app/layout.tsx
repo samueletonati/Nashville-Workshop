@@ -26,6 +26,7 @@ export default function RootLayout({
             <a href="#description" className="hover:text-blue-300 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 rounded px-1">Description</a>
             <a href="#program" className="hover:text-blue-300 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 rounded px-1">Program</a>
             <a href="#participants" className="hover:text-blue-300 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 rounded px-1">Participants</a>
+            <a href="#press" className="hover:text-blue-300 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 rounded px-1">Press</a>
             <a href="#venue" className="hover:text-blue-300 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 rounded px-1">Venue & Links</a>
           </div>
         </nav>
@@ -38,7 +39,7 @@ export default function RootLayout({
         {/* Footer Ultra-Minimale a Riga Singola */}
         <footer className="border-t border-gray-200 bg-gray-50 py-5">
           <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-            
+
             <p className="text-gray-600 text-sm text-center md:text-left">
               Organized by the{" "}
               <a href="https://my.vanderbilt.edu/cca/" target="_blank" rel="noopener noreferrer" className="font-semibold text-blue-600 hover:text-blue-800 underline decoration-blue-200 underline-offset-2">
@@ -49,7 +50,7 @@ export default function RootLayout({
                 InsIDE lab
               </a>.
             </p>
-            
+
             <div className="flex items-center gap-5 opacity-80 hover:opacity-100 transition-opacity duration-300">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/images/vanderbilt.png" alt="Vanderbilt Logo" className="h-12 w-auto object-contain" />

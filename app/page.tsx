@@ -1,76 +1,249 @@
-// Moved data outside the component to prevent unnecessary re-renders
+"use client";
+
+import { useState } from "react";
+
+// ---------------------------------------------------------------------------
+// PARTICIPANTS
+// Sorted alphabetically by surname.
+// `website` is optional: if present, the whole card becomes a link.
+// `image` is optional: if missing or broken, an initials avatar is shown.
+// ---------------------------------------------------------------------------
 const participants = [
-  { 
-    name: "Peter Boyvalenkov", 
+  {
+    name: "Peter Boyvalenkov",
     affiliation: "Bulgarian Academy of Sciences",
+    website: "https://math.bas.bg/profiles/boyvalenkov-peter-director/?lang=en",
     image: "https://i1.rgstatic.net/ii/profile.image/314279830458373-1451941558783_Q512/Peter-Boyvalenkov.jpg"
   },
-  { 
-    name: "José A. Carrillo", 
+  {
+    name: "José A. Carrillo",
     affiliation: "University of Oxford",
+    website: "https://carrilloja.org",
     image: "https://www.queens.ox.ac.uk/wp-content/uploads/2022/08/Jose-Carrillo-WK5A3594.jpg"
   },
-  { 
-    name: "Peter Dragnev", 
+  {
+    name: "Peter Dragnev",
     affiliation: "Purdue University – Fort Wayne",
+    website: "https://users.pfw.edu/dragnevp/",
     image: "https://i1.rgstatic.net/ii/profile.image/729093783953415-1550840912312_Q512/Peter-Dragnev.jpg"
   },
-  { 
-    name: "Doug Hardin", 
+  {
+    name: "Christina Giannitsi",
+    affiliation: "Virginia Tech",
+    website: "https://sites.google.com/view/christina-giannitsi/home",
+    image: "https://lh3.googleusercontent.com/sitesv/AG8ngQVDEkOwUHUmCBQUPfsx5CbvbE2-OoGU4TnY9AtcVdlaGeY_Wg9V8Osq8eZyYeSq4aW4MujGcZt3HuKvE-SCLyUJbbUZT-HnISdk6ADYdw-y0RI5BAuMh4Z7LJv_oDPJTkzqf198qYR4Lt9AdYoRIjKwkkm5xJMtP2wrE_A1fYV5N1kXKce9g7TcPvcMBwukScA4-aAaTZxaY6jyssJfUIVZtqzHUnh4zW6iyjRAPSI=w1280"
+  },
+  {
+    name: "Doug Hardin",
     affiliation: "Vanderbilt University",
+    website: "https://my.vanderbilt.edu/doughardin/",
     image: "https://as.vanderbilt.edu/photos/math/people/image.php/doug-hardin.jpg?width=220&image=/photos/math/people/doug-hardin.jpg"
   },
-  { 
-    name: "Yanghong Huang", 
+  {
+    name: "Yanghong Huang",
     affiliation: "The Manchester University",
+    website: "https://personalpages.manchester.ac.uk/staff/yanghong.huang/",
     image: "https://personalpages.manchester.ac.uk/staff/yanghong.huang/img/yhpic.jpg"
   },
-  { 
-    name: "Liudmyla Kryvonos", 
+  {
+    name: "Liudmyla Kryvonos",
     affiliation: "University of North Florida",
+    website: "https://webapps.unf.edu/faculty/bio/N01654015/liudmyla-kryvonos",
     image: "/images/liudmyla.jpg"
   },
-  { 
-    name: "Ryan Matzke", 
+  {
+    name: "Ryan Matzke",
     affiliation: "Case Western Reserve University",
+    website: "https://www.ryanmatzke.com",
     image: "https://artscimedia.case.edu/wp-content/uploads/2025/08/26093812/84d79e82-3e47-4151-bb65-3b156b82186e.jpg"
   },
-  { 
-    name: "Ed Saff", 
+  {
+    name: "Dirk Nuyens",
+    affiliation: "Katholieke Universiteit Leuven",
+    website: "https://people.cs.kuleuven.be/~dirk.nuyens/",
+    // TODO: save the photo from https://people.cs.kuleuven.be/~dirk.nuyens/cv/
+    // into public/images/nuyens.jpg — until then the initials avatar is shown.
+    image: "/images/nuyens.jpg"
+  },
+  {
+    name: "Ed Saff",
     affiliation: "Vanderbilt University",
+    website: "https://my.vanderbilt.edu/edsaff/",
     image: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Saff_edward.jpg"
   },
-  { 
-    name: "Raffaello Seri", 
+  {
+    name: "Raffaello Seri",
     affiliation: "University of Insubria",
+    website: "https://rseri.me",
     image: "https://www.varesenews.it/photogallery_new/images/2026/04/raffaello-seri-universita-insubria-2068924.1024x768.jpg"
   },
-  { 
-    name: "Ruiwen Shu", 
+  {
+    name: "Ruiwen Shu",
     affiliation: "University of Georgia",
+    website: "https://shuruiwen.com",
     image: "https://www.math.uga.edu/sites/default/files/styles/square_400x400/public/IMG_1329.jpg"
   },
-  { 
-    name: "Maya Stoyanova", 
+  {
+    name: "Maya Stoyanova",
     affiliation: "Sofia University “St. Kliment Ohridski”",
+    website: "https://www.fmi.uni-sofia.bg/en/faculty/maya-miteva-stoyanova",
     image: "https://www.uni-sofia.bg/var/ezwebin_site/storage/images/media/images/02_openning_prof_maya_stoyanova/2168313-1-bul-BG/02_openning_prof_maya_stoyanova.jpg"
   },
-  { 
-    name: "Eitan Tadmor", 
+  {
+    name: "Eitan Tadmor",
     affiliation: "University of Maryland",
+    website: "https://www.math.umd.edu/~tadmor/",
     image: "https://www.math.umd.edu/~tadmor/images/Tadmor7.jpg"
   },
-  { 
-    name: "Robert Womersley", 
+  {
+    name: "Robert Womersley",
     affiliation: "University of New South Wales",
-    image: "https://api.research.unsw.edu.au/sites/default/files/images/profile/rob_womersley.jpg"
+    website: "https://www.unsw.edu.au/staff/robert-womersley",
+    // The UNSW-hosted image cannot be hot-linked from other sites.
+    // Save a local copy as public/images/womersley.jpg.
+    image: "/images/womersley.jpg"
   }
 ];
 
+// ---------------------------------------------------------------------------
+// SCHEDULE
+// Fill `sessions` for each day once Doug's schedule is confirmed.
+// While every day is empty, the "being finalized" notice is shown instead.
+// Example entry:
+//   { time: "09:00 – 09:50", speaker: "Ed Saff", title: "Talk title here" }
+//   { time: "10:30 – 11:00", title: "Coffee break", break: true }
+// ---------------------------------------------------------------------------
+const schedule = [
+  { day: "Sunday", date: "August 16, 2026", sessions: [] },
+  { day: "Monday", date: "August 17, 2026", sessions: [] },
+  { day: "Tuesday", date: "August 18, 2026", sessions: [] },
+  { day: "Wednesday", date: "August 19, 2026", sessions: [] }
+] as {
+  day: string;
+  date: string;
+  sessions: { time: string; speaker?: string; title: string; break?: boolean }[];
+}[];
+
+// Optional: link to a downloadable schedule (e.g. "/schedule.pdf").
+// Leave as null to hide the download button.
+const schedulePdf: string | null = null;
+
+// ---------------------------------------------------------------------------
+// PRESS COVERAGE
+// Add entries as coverage appears. While empty, a short placeholder is shown.
+// Example entry:
+//   {
+//     outlet: "Università dell'Insubria",
+//     title: "Headline of the article",
+//     url: "https://...",
+//     date: "September 2026",
+//     language: "IT"        // optional
+//   }
+// ---------------------------------------------------------------------------
+const pressCoverage = [] as {
+  outlet: string;
+  title: string;
+  url: string;
+  date: string;
+  language?: string;
+}[];
+
+// ---------------------------------------------------------------------------
+// Avatar: shows the photo, falling back to initials if the image fails to load.
+// ---------------------------------------------------------------------------
+function Avatar({ name, src }: { name: string; src?: string }) {
+  const [failed, setFailed] = useState(false);
+
+  const initials = name
+    .split(" ")
+    .filter((w) => /[A-Za-zÀ-ÿ]/.test(w[0]))
+    .map((w) => w[0])
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
+
+  const showFallback = !src || failed;
+
+  return (
+    <div className="w-16 h-16 shrink-0 rounded-full overflow-hidden border-2 border-gray-100 bg-gray-50 group-hover:border-blue-100 transition-colors">
+      {showFallback ? (
+        <div
+          className="w-full h-full flex items-center justify-center bg-blue-50 text-blue-700 font-bold text-lg select-none"
+          aria-label={`${name} (no photo available)`}
+        >
+          {initials}
+        </div>
+      ) : (
+        /* eslint-disable-next-line @next/next/no-img-element */
+        <img
+          src={src}
+          alt={`Photo of ${name}`}
+          className="w-full h-full object-cover object-top"
+          loading="lazy"
+          onError={() => setFailed(true)}
+        />
+      )}
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Participant card. Renders as a link when a website is available.
+// ---------------------------------------------------------------------------
+function ParticipantCard({
+  participant
+}: {
+  participant: { name: string; affiliation?: string; website?: string; image?: string };
+}) {
+  const { name, affiliation, website, image } = participant;
+
+  const inner = (
+    <>
+      <Avatar name={name} src={image} />
+      <div className="min-w-0">
+        <h3 className="font-bold text-[17px] text-slate-900 leading-tight mb-1 group-hover:text-blue-700 transition-colors">
+          {name}
+          {website && (
+            <span
+              aria-hidden="true"
+              className="ml-1.5 inline-block text-xs text-gray-300 group-hover:text-blue-500 transition-colors align-middle"
+            >
+              ↗
+            </span>
+          )}
+        </h3>
+        {affiliation && <p className="text-sm text-gray-500 leading-snug">{affiliation}</p>}
+      </div>
+    </>
+  );
+
+  const shared =
+    "bg-white p-5 border border-gray-200 rounded-xl shadow-sm flex items-center gap-4 transition-all group";
+
+  if (!website) {
+    return <div className={shared}>{inner}</div>;
+  }
+
+  return (
+    <a
+      href={website}
+      target="_blank"
+      rel="noopener noreferrer"
+      title={`${name} — personal website`}
+      className={`${shared} hover:shadow-md hover:border-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2`}
+    >
+      {inner}
+    </a>
+  );
+}
+
 export default function Home() {
+  const hasSchedule = schedule.some((d) => d.sessions.length > 0);
+  const hasPress = pressCoverage.length > 0;
+
   return (
     <div className="space-y-16">
-      
+
       {/* HEADER */}
       <header id="home" className="border-b border-gray-300 pb-10 text-center md:text-left pt-4">
         <h3 className="text-xl font-semibold text-blue-700 mb-2 tracking-tight">
@@ -88,7 +261,7 @@ export default function Home() {
             <span aria-hidden="true">📍</span> Vanderbilt University, TN
           </p>
         </div>
-        
+
         {/* L'immagine principale */}
         <div className="mt-10 aspect-video relative rounded-xl overflow-hidden shadow-lg border border-gray-200 bg-gray-100">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -118,10 +291,10 @@ export default function Home() {
           <p>
             The aim of this mini-workshop is to bring together a multifaceted group of researchers working in potential theory, approximation, gradient flows, point configurations, lattices, and partial differential equations who have recently made important contributions to energy minimization and polarization problems to report on their work and to collaborate in trying to resolve some of the fundamental questions in the field.
           </p>
-          
+
           <div className="bg-blue-50/80 border-l-4 border-blue-600 p-6 mt-8 rounded-r-lg shadow-sm">
             <p className="text-blue-900 font-medium">
-              <strong className="text-blue-800 uppercase tracking-wide text-sm mr-2">Looking ahead:</strong> 
+              <strong className="text-blue-800 uppercase tracking-wide text-sm mr-2">Looking ahead:</strong>
               &ldquo;Energy and Polarization Problems in Mathematics and Statistics, part II&rdquo; will be jointly hosted by the University of Insubria and Vanderbilt University in 2027 in either Como or Varese, Italy.
             </p>
           </div>
@@ -130,18 +303,80 @@ export default function Home() {
 
       {/* PROGRAM */}
       <section id="program" className="scroll-mt-24">
-        <h2 className="text-2xl font-bold text-slate-800 border-b-2 border-blue-600 pb-2 mb-6 inline-block">
-          Program
-        </h2>
-        <div className="bg-slate-50 border border-slate-200 rounded-xl p-8 text-center shadow-sm">
-          <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span aria-hidden="true" className="text-2xl">🗓️</span>
-          </div>
-          <h3 className="text-xl font-bold text-slate-800 mb-2">Schedule of Talks</h3>
-          <p className="text-gray-600 max-w-lg mx-auto">
-            The detailed schedule of talks and events is currently being finalized. Please check back closer to the workshop dates for the full program.
-          </p>
+        <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
+          <h2 className="text-2xl font-bold text-slate-800 border-b-2 border-blue-600 pb-2 inline-block">
+            Program
+          </h2>
+          {schedulePdf && (
+            <a
+              href={schedulePdf}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2 rounded-lg shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+            >
+              <span aria-hidden="true">⬇</span> Download schedule (PDF)
+            </a>
+          )}
         </div>
+
+        {hasSchedule ? (
+          <div className="space-y-6">
+            {schedule
+              .filter((d) => d.sessions.length > 0)
+              .map((d) => (
+                <div
+                  key={d.date}
+                  className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden"
+                >
+                  <div className="bg-slate-50 px-6 py-4 border-b border-gray-200 flex flex-wrap items-baseline gap-x-3">
+                    <h3 className="font-bold text-slate-800">{d.day}</h3>
+                    <span className="text-sm text-gray-500">{d.date}</span>
+                  </div>
+                  <ul className="divide-y divide-gray-100">
+                    {d.sessions.map((s, i) => (
+                      <li
+                        key={i}
+                        className={`px-6 py-4 flex flex-col sm:flex-row sm:gap-6 ${
+                          s.break ? "bg-slate-50/60" : ""
+                        }`}
+                      >
+                        <span className="text-sm font-mono text-blue-700 shrink-0 sm:w-36 mb-1 sm:mb-0 tabular-nums">
+                          {s.time}
+                        </span>
+                        <div className="min-w-0">
+                          {s.speaker && (
+                            <p className="font-semibold text-slate-900 leading-tight">{s.speaker}</p>
+                          )}
+                          <p
+                            className={
+                              s.break
+                                ? "text-gray-500 italic text-sm"
+                                : "text-gray-700 leading-snug"
+                            }
+                          >
+                            {s.title}
+                          </p>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            <p className="text-sm text-gray-500 italic">
+              The program is subject to change. Please check back for updates.
+            </p>
+          </div>
+        ) : (
+          <div className="bg-slate-50 border border-slate-200 rounded-xl p-8 text-center shadow-sm">
+            <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span aria-hidden="true" className="text-2xl">🗓️</span>
+            </div>
+            <h3 className="text-xl font-bold text-slate-800 mb-2">Schedule of Talks</h3>
+            <p className="text-gray-600 max-w-lg mx-auto">
+              The detailed schedule of talks and events is currently being finalized. Please check back closer to the workshop dates for the full program.
+            </p>
+          </div>
+        )}
       </section>
 
       {/* PARTICIPANTS */}
@@ -150,24 +385,73 @@ export default function Home() {
           Partial Listing of Participants
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700">
-          {participants.map((p, idx) => (
-            <div key={idx} className="bg-white p-5 border border-gray-200 rounded-xl shadow-sm flex items-center gap-4 hover:shadow-md hover:border-blue-200 transition-all group">
-              <div className="w-16 h-16 shrink-0 rounded-full overflow-hidden border-2 border-gray-100 bg-gray-50 group-hover:border-blue-100 transition-colors">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img 
-                  src={p.image} 
-                  alt={`Photo of ${p.name}`} 
-                  className="w-full h-full object-cover object-top"
-                  loading="lazy"
-                />
-              </div>
-              <div>
-                <h3 className="font-bold text-[17px] text-slate-900 leading-tight mb-1 group-hover:text-blue-700 transition-colors">{p.name}</h3>
-                {p.affiliation && <p className="text-sm text-gray-500 leading-snug">{p.affiliation}</p>}
-              </div>
-            </div>
+          {participants.map((p) => (
+            <ParticipantCard key={p.name} participant={p} />
           ))}
         </div>
+        <p className="text-sm text-gray-500 mt-6 italic">
+          Click a participant to visit their personal or institutional page.
+        </p>
+      </section>
+
+      {/* PRESS COVERAGE */}
+      <section id="press" className="scroll-mt-24">
+        <h2 className="text-2xl font-bold text-slate-800 border-b-2 border-blue-600 pb-2 mb-6 inline-block">
+          Press Coverage
+        </h2>
+
+        {hasPress ? (
+          <div className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+            <ul className="divide-y divide-gray-100">
+              {pressCoverage.map((item, i) => (
+                <li key={i} className="hover:bg-slate-50 transition-colors">
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-6 py-5 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-inset"
+                  >
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1.5">
+                      <span className="text-xs font-semibold uppercase tracking-wide text-blue-700 bg-blue-50 px-2 py-0.5 rounded">
+                        {item.outlet}
+                      </span>
+                      <span className="text-xs text-gray-500">{item.date}</span>
+                      {item.language && (
+                        <span className="text-xs text-gray-400 border border-gray-200 px-1.5 rounded">
+                          {item.language}
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-slate-800 font-medium leading-snug hover:text-blue-700 transition-colors">
+                      {item.title}
+                    </p>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : (
+          <div className="bg-slate-50 border border-slate-200 rounded-xl p-8 text-center shadow-sm">
+            <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span aria-hidden="true" className="text-2xl">📰</span>
+            </div>
+            <h3 className="text-xl font-bold text-slate-800 mb-2">In the News</h3>
+            <p className="text-gray-600 max-w-lg mx-auto">
+              Articles and announcements about the workshop will be collected here as they appear.
+            </p>
+          </div>
+        )}
+
+        <p className="text-sm text-gray-500 mt-4">
+          Members of the press are welcome to contact the organizers at{" "}
+          <a
+            href="mailto:doug.hardin@vanderbilt.edu"
+            className="text-blue-600 hover:text-blue-800 font-semibold underline decoration-blue-200 underline-offset-2"
+          >
+            doug.hardin@vanderbilt.edu
+          </a>
+          .
+        </p>
       </section>
 
       {/* VENUE & LINKS */}
@@ -245,7 +529,7 @@ export default function Home() {
               </li>
               <li className="px-6 py-4 hover:bg-slate-50 transition-colors">
                 <div className="flex items-center">
-                  <span aria-hidden="true" className="mr-3 text-lg">🚗</span> 
+                  <span aria-hidden="true" className="mr-3 text-lg">🚗</span>
                   <span className="text-gray-700 font-medium">
                     <a href="https://www.vanderbilt.edu/transportation-parking/parking/visitors/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">Visitor Parking</a>
                     {" "}and{" "}
@@ -255,7 +539,7 @@ export default function Home() {
               </li>
             </ul>
           </div>
-          
+
         </div>
       </section>
 
