@@ -141,7 +141,22 @@ const schedulePdf: string | null = null;
 //     language: "IT"        // optional
 //   }
 // ---------------------------------------------------------------------------
-const pressCoverage = [] as {
+const pressCoverage = [
+  {
+    outlet: "VareseNews",
+    title: "L'Insubria porta a Nashville un confronto internazionale su matematica e statistica",
+    url: "https://www.varesenews.it/2026/07/linsubria-porta-a-nashville-un-confronto-internazionale-su-matematica-e-statistica/2648473/",
+    date: "July 2026",
+    language: "IT"
+  },
+  {
+    outlet: "Università dell'Insubria",
+    title: "Il professor Raffaello Seri tra gli organizzatori del workshop a Nashville",
+    url: "https://www.uninsubria.it/ateneo/ci-presentiamo/comunicazione/tutte-le-notizie/il-professor-raffaello-seri-tra-gli",
+    date: "July 2026",
+    language: "IT"
+  }
+] as {
   outlet: string;
   title: string;
   url: string;
