@@ -114,11 +114,51 @@ const participants = [
 //   { time: "09:00 – 09:50", speaker: "Ed Saff", title: "Talk title here" }
 //   { time: "10:30 – 11:00", title: "Coffee break", break: true }
 // ---------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
+// SCHEDULE
+// Fill `sessions` for each day once Doug's schedule is confirmed.
+// While every day is empty, the "being finalized" notice is shown instead.
+// ---------------------------------------------------------------------------
 const schedule = [
-  { day: "Sunday", date: "August 16, 2026", sessions: [] },
-  { day: "Monday", date: "August 17, 2026", sessions: [] },
-  { day: "Tuesday", date: "August 18, 2026", sessions: [] },
-  { day: "Wednesday", date: "August 19, 2026", sessions: [] }
+  { 
+    day: "Monday", 
+    date: "August 17, 2026", 
+    sessions: [
+      { time: "9:30a – 10:20a", speaker: "Raffaello Seri", title: "TBA" },
+      { time: "10:30a – 11:00a", title: "Coffee break", break: true },
+      { time: "11:00a – 11:50a", speaker: "Dirk Nuyens", title: "TBA" },
+      { time: "12:00p – 1:30p", title: "Lunch break", break: true },
+      { time: "1:30p – 2:20p", speaker: "Robert Womersley", title: "TBA" },
+      { time: "2:30p – 3:00p", title: "Open Problems with Coffee", break: true },
+      { time: "3:00p – 3:50p", speaker: "Peter Dragnev", title: "TBA" }
+    ] 
+  },
+  { 
+    day: "Tuesday", 
+    date: "August 18, 2026", 
+    sessions: [
+      { time: "9:30a – 10:20a", speaker: "José Carrillo", title: "TBA" },
+      { time: "10:30a – 11:00a", title: "Coffee break", break: true },
+      { time: "11:00a – 11:50a", speaker: "Ruiwen Shu", title: "TBA" },
+      { time: "12:00p – 1:30p", title: "Lunch break", break: true },
+      { time: "1:30p – 2:20p", speaker: "Yanghong Huang", title: "TBA" },
+      { time: "2:30p – 3:00p", title: "Open Problems with Coffee", break: true },
+      { time: "3:00p – 3:50p", speaker: "Maya Stoyanova", title: "TBA" }
+    ] 
+  },
+  { 
+    day: "Wednesday", 
+    date: "August 19, 2026", 
+    sessions: [
+      { time: "9:30a – 10:20a", speaker: "Ryan Matzke", title: "TBA" },
+      { time: "10:30a – 11:00a", title: "Coffee break", break: true },
+      { time: "11:00a – 11:50a", speaker: "Liudmyla Kryvonos", title: "TBA" },
+      { time: "12:00p – 1:30p", title: "Lunch break", break: true },
+      { time: "1:30p – 2:20p", speaker: "Peter Boyvalenkov", title: "TBA" },
+      { time: "2:30p – 3:00p", title: "Open Problems with Coffee", break: true },
+      { time: "3:00p – 3:50p", speaker: "Christina Giannitsi", title: "TBA" }
+    ] 
+  }
 ] as {
   day: string;
   date: string;
@@ -126,8 +166,8 @@ const schedule = [
 }[];
 
 // Optional: link to a downloadable schedule (e.g. "/schedule.pdf").
-// Leave as null to hide the download button.
-const schedulePdf: string | null = null;
+// Impostato per far apparire il bottone di download con il file PDF.
+const schedulePdf: string | null = "/Schedule_workshop.pdf";
 
 // ---------------------------------------------------------------------------
 // PRESS COVERAGE
