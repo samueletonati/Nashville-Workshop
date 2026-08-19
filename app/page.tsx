@@ -59,7 +59,7 @@ const participants = [
   },
   {
     name: "Dirk Nuyens",
-    affiliation: "Katholieke Universiteit Leuven",
+    affiliation: "KU Leuven",
     website: "https://people.cs.kuleuven.be/~dirk.nuyens/",
     // TODO: save the photo from https://people.cs.kuleuven.be/~dirk.nuyens/cv/
     // into public/images/nuyens.jpg — until then the initials avatar is shown.
@@ -124,39 +124,42 @@ const schedule = [
     day: "Monday", 
     date: "August 17, 2026", 
     sessions: [
-      { time: "9:30a – 10:20a", speaker: "Raffaello Seri", title: "TBA" },
+      { time: "9:20a – 9:30a", title: "Welcome", break: true },
+      { time: "9:30a – 10:20a", speaker: "Raffaello Seri", title: "Probabilistic properties of polarization measures on Polish spaces" },
       { time: "10:30a – 11:00a", title: "Coffee break", break: true },
-      { time: "11:00a – 11:50a", speaker: "Dirk Nuyens", title: "TBA" },
+      { time: "11:00a – 11:50a", speaker: "Dirk Nuyens", title: "When are well-distributed points good integration points?" },
       { time: "12:00p – 1:30p", title: "Lunch break", break: true },
-      { time: "1:30p – 2:20p", speaker: "Robert Womersley", title: "TBA" },
+      { time: "1:30p – 2:20p", speaker: "Robert Womersley", title: "Discrete Riesz energy on the sphere S2 – Local Minima, Voronoi cells, Scars and Asymptotics" },
       { time: "2:30p – 3:00p", title: "Open Problems with Coffee", break: true },
-      { time: "3:00p – 3:50p", speaker: "Peter Dragnev", title: "TBA" }
+      { time: "3:00p – 3:50p", speaker: "Peter Dragnev", title: "On Universal Maxima of Discrete Potentials and Min-max Polarization of Spherical Codes" },
+      { time: "4:30p – 6:30p", title: "Welcome Refreshments", break: true }
     ] 
   },
   { 
     day: "Tuesday", 
     date: "August 18, 2026", 
     sessions: [
-      { time: "9:30a – 10:20a", speaker: "José Carrillo", title: "TBA" },
+      { time: "9:30a – 10:20a", speaker: "José Carrillo", title: "Stein-Log-Sobolev inequalities for the continuous Stein variational gradient descent method" },
       { time: "10:30a – 11:00a", title: "Coffee break", break: true },
-      { time: "11:00a – 11:50a", speaker: "Ruiwen Shu", title: "TBA" },
+      { time: "11:00a – 11:50a", speaker: "Ruiwen Shu", title: "Recent progress on interaction energy minimizers" },
       { time: "12:00p – 1:30p", title: "Lunch break", break: true },
-      { time: "1:30p – 2:20p", speaker: "Yanghong Huang", title: "TBA" },
+      { time: "1:30p – 2:20p", speaker: "Yanghong Huang", title: "Finite Difference Methods for fractional Laplacian of radial functions" },
       { time: "2:30p – 3:00p", title: "Open Problems with Coffee", break: true },
-      { time: "3:00p – 3:50p", speaker: "Maya Stoyanova", title: "TBA" }
+      { time: "3:00p – 3:50p", speaker: "Maya Stoyanova", title: "Universal polar dual pairs of spherical codes found in E8 and Λ24" },
+      { time: "6:45p", title: "Banquet: Amerigo Restaurant, 1920 West End Ave, Nashville", break: true }
     ] 
   },
   { 
     day: "Wednesday", 
     date: "August 19, 2026", 
     sessions: [
-      { time: "9:30a – 10:20a", speaker: "Ryan Matzke", title: "TBA" },
+      { time: "9:30a – 10:20a", speaker: "Ryan Matzke", title: "Charge caught in corners" },
       { time: "10:30a – 11:00a", title: "Coffee break", break: true },
-      { time: "11:00a – 11:50a", speaker: "Liudmyla Kryvonos", title: "TBA" },
+      { time: "11:00a – 11:50a", speaker: "Liudmyla Kryvonos", title: "The Next-Order Term for Discrete Energy on a Ball" },
       { time: "12:00p – 1:30p", title: "Lunch break", break: true },
-      { time: "1:30p – 2:20p", speaker: "Peter Boyvalenkov", title: "TBA" },
+      { time: "1:30p – 2:20p", speaker: "Peter Boyvalenkov", title: "Levenshtein-type linear programming for (a, b)-avoiding spherical codes" },
       { time: "2:30p – 3:00p", title: "Open Problems with Coffee", break: true },
-      { time: "3:00p – 3:50p", speaker: "Christina Giannitsi", title: "TBA" }
+      { time: "3:00p – 3:50p", speaker: "Christina Giannitsi", title: "Sharp Bounds for Minimal Riesz Energy on Homogeneous Manifolds" }
     ] 
   }
 ] as {
