@@ -59,7 +59,7 @@ const participants = [
   },
   {
     name: "Dirk Nuyens",
-    affiliation: "KU Leuven",
+    affiliation: "Katholieke Universiteit Leuven",
     website: "https://people.cs.kuleuven.be/~dirk.nuyens/",
     // TODO: save the photo from https://people.cs.kuleuven.be/~dirk.nuyens/cv/
     // into public/images/nuyens.jpg — until then the initials avatar is shown.
@@ -88,12 +88,6 @@ const participants = [
     affiliation: "Sofia University “St. Kliment Ohridski”",
     website: "https://www.fmi.uni-sofia.bg/en/faculty/maya-miteva-stoyanova",
     image: "https://www.uni-sofia.bg/var/ezwebin_site/storage/images/media/images/02_openning_prof_maya_stoyanova/2168313-1-bul-BG/02_openning_prof_maya_stoyanova.jpg"
-  },
-  {
-    name: "Eitan Tadmor",
-    affiliation: "University of Maryland",
-    website: "https://www.math.umd.edu/~tadmor/",
-    image: "https://www.math.umd.edu/~tadmor/images/Tadmor7.jpg"
   },
   {
     name: "Robert Womersley",
